@@ -29,3 +29,4 @@ Route::get('/categories/{category:slug}', [CategoriesController::class, 'show'])
 Route::get('/author/{author:username}', [AuthorController::class, 'show']);
 Route::get('/login', [LoginController::class, 'index']);
 Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/register', [RegisterController::class, 'store']);
