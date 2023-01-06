@@ -8,6 +8,12 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('dashboard.index');
+        return view(
+            'dashboard.index',
+            [
+                'title' => 'Ballsky | Dashboard',
+                'subtitle' => 'Dashboard | Halaman Dashboard'
+            ]
+        );
     }
 }
