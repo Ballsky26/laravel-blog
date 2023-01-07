@@ -4,6 +4,7 @@
 @endsection
 @section('content')
 <div class="table-responsive text-nowrap">
+  <a href="/dashboard/posts/create" class="btn btn-primary btn-sm mb-3">Tambah Data</a>
     <table class="table table-bordered">
       <thead>
         <tr>

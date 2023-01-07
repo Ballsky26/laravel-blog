@@ -76,7 +76,7 @@
       </li>
 
       <!-- Layouts -->
-      <li class="menu-item {{ Request::is('dashboard/posts') ? 'active' : '' }}">
+      <li class="menu-item {{ Request::is('dashboard/posts*') ? 'active' : '' }}">
         <a href="/dashboard/posts" class="menu-link">
           <i class="menu-icon tf-icons bx bx-layout"></i>
           <div data-i18n="Layouts">My Posts</div>

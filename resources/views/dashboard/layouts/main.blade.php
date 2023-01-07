@@ -55,6 +55,12 @@
 
     <link rel="stylesheet" href="{{ asset('template') }}/vendor/libs/apex-charts/apex-charts.css" />
 
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">
+    <style>
+      trix-toolbar [data-trix-button-group = "file-tools"]{
+        display: none;
+      }
+    </style>
     <!-- Page CSS -->
 
     <!-- Helpers -->
@@ -138,6 +144,7 @@
 
     <!-- Page JS -->
     <script src="{{ asset('template') }}/js/dashboards-analytics.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script>
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
