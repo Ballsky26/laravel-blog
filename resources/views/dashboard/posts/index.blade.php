@@ -3,6 +3,11 @@
 <h4>{{ $subtitle }}</h4>
 @endsection
 @section('content')
+@if (session()->has('success'))
+      <div class="alert alert-success" role="alert">
+          {{ session('success') }}
+      </div>
+@endif
 <div class="table-responsive text-nowrap">
   <a href="/dashboard/posts/create" class="btn btn-primary btn-sm mb-3">Tambah Data</a>
     <table class="table table-bordered">

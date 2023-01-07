@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Support\Str;
 
 class DashboardPostController extends Controller
 {
@@ -51,7 +52,25 @@ class DashboardPostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([
+            'title' => 'required|max:255',
+            'slug' => 'required|unique:posts',
+            'category_id' => 'required',
+            'body' => 'required'
+        ], [
+            'title.required' => 'Judul belum diisi!',
+            'slug.required' => 'Slug belum diisi!',
+            'slug.unique' => 'Slug tersebut sudah ada!',
+            'category_id.required' => 'Category belum diisi!',
+            'body.required' => 'Isi Post belum diisi!'
+        ]);
+
+        $validateData['user_id'] = auth()->user()->id;
+        $validateData['excerpt'] = Str::limit(strip_tags($request->body, 200));
+
+        Post::create($validateData);
+
+        return redirect('/dashboard/posts')->with('success', 'Post Berhasil ditambahkan');
     }
 
     /**

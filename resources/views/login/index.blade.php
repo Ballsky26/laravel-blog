@@ -3,13 +3,11 @@
 
 <div class="row justify-content-center">
     <div class="col-md-4">
-
       @if (session()->has('success'))
       <div class="alert alert-success" role="alert">
           {{ session('success') }}
       </div>
       @endif
-
       @if (session()->has('loginError'))
       <div class="alert alert-danger" role="alert">
           {{ session('loginError') }}
