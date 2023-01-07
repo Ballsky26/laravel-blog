@@ -26,8 +26,13 @@
             <td>{{ $post->title }}</td>
             <td>{{ $post->category->name }}</td>
             <td><a href="/dashboard/posts/{{ $post->slug }}" class="btn btn-info btn-sm">Detail</a>
-            <a href="" class="btn btn-warning btn-sm">Edit</a>
-            <a href="" class="btn btn-danger btn-sm">Delete</a></td>
+            <a href="/dashboard/posts/{{ $post->slug }}/edit" class="btn btn-warning btn-sm">Edit</a>
+            <form action="/dashboard/posts/{{ $post->slug }}" method="POST" class="d-inline">
+            @method('delete')
+            @csrf
+            <button class="btn btn-danger btn-sm" onclick="return confirm('Apakah data ini mau di hapus?')">Delete</button>
+            </form>
+          </td>
         </tr>
         @endforeach
       </tbody>
