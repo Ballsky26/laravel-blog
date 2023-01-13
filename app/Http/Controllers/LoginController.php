@@ -18,12 +18,12 @@ class LoginController extends Controller
     {
         $credentials = $request->validate(
             [
-                'email' => 'required|email:dns',
+                'email' => 'required|email',
                 'password' => 'required'
             ],
             [
                 'email.required' => 'Email belum diisi',
-                'email.email:dns' => 'Form ini hanya bisa diisi email',
+                'email.email' => 'Form ini hanya bisa diisi email',
                 'password.required' => 'Password belum diisi'
             ]
         );
