@@ -67,6 +67,7 @@
     <div class="menu-inner-shadow"></div>
 
     <ul class="menu-inner py-1">
+    
       <!-- Dashboard -->
       <li class="menu-item {{ Request::is('dashboard') ? 'active' : '' }}">
         <a href="/dashboard" class="menu-link">
@@ -74,14 +75,21 @@
           <div data-i18n="Analytics">Dashboard</div>
         </a>
       </li>
-
-      <!-- Layouts -->
       <li class="menu-item {{ Request::is('dashboard/posts*') ? 'active' : '' }}">
         <a href="/dashboard/posts" class="menu-link">
           <i class="menu-icon tf-icons bx bx-layout"></i>
           <div data-i18n="Layouts">My Posts</div>
         </a>
       </li>
+      @can('admin')
+      <li class="menu-item {{ Request::is('dashboard/categories*') ? 'active' : '' }}">
+        <a href="/dashboard/categories" class="menu-link">
+          <i class="menu-icon tf-icons bx bx-collection"></i>
+          <div data-i18n="Layouts">Post Category</div>
+        </a>
+      </li>
+      @endcan
+    </ul>
 
-   
+  
   </aside>

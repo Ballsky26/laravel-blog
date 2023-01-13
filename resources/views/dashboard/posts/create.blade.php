@@ -55,6 +55,7 @@
       @enderror
       <trix-editor input="body"></trix-editor>
     </div>
+    <a href="/dashboard/posts" class="btn btn-secondary">Batal</a>
     <button type="submit" class="btn btn-primary">Simpan</button>
   </form>
 </div>

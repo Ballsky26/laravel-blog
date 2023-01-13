@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
-    // protected $table = 'category';
-    // protected $fillable = ['name', 'slug'];
-    protected $guarded = ['id'];
+    protected $table = 'categories';
+    protected $fillable = ['name', 'slug'];
+    // protected $guarded = ['id'];
 
     public function posts()
     {
